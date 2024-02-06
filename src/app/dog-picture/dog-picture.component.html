@@ -1,2 +1,5 @@
-<button (click)="reloadWindow()">new dog</button>
+<button (click)="fetchDog(); changeMessage()">new dog</button>
 <img [src]="dogPic$ | async" alt="dog" />
+<!-- <div *ngIf="isDesp; else elseBlock">Can I pet that dog?</div> -->
+<!-- <ng-template #elseBlock>Can I pet that doooooog?</ng-template> -->
+<p>{{ message }}</p>

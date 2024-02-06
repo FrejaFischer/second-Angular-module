@@ -6,10 +6,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { DogPictureComponent } from './dog-picture/dog-picture.component';
 import { AsyncPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, DogPictureComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, AsyncPipe],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AsyncPipe,
+    CommonModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

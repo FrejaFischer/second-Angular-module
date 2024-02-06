@@ -9,10 +9,17 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DogPictureComponent {
   dogPic$ = new BehaviorSubject<any>('');
+  isDesp: boolean = false;
+
+  message: string = 'Can I pet that dog?';
 
   constructor(private fetchDogs: FetchDogService) {}
 
-  async ngOnInit() {
+  ngOnInit() {
+    this.fetchDog();
+  }
+
+  async fetchDog() {
     const pic = await this.fetchDogs.fetchData();
     console.log('dog-card', pic);
     this.dogPic$.next(pic);
@@ -20,5 +27,12 @@ export class DogPictureComponent {
 
   reloadWindow() {
     window.location.reload();
+  }
+
+  toggleDesp() {
+    this.isDesp = !this.isDesp;
+  }
+  changeMessage() {
+    this.message = this.message.replace('o', 'oo');
   }
 }
